@@ -22,6 +22,7 @@ jobs:
 
   run-windows-command:
     runs-on: windows-latest
+    needs: ["run-shell-command"] #If you want to run jobs sequentially
     steps:
       - name: Directory Powershell
         run: Get-Location
