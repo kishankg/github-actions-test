@@ -4,11 +4,11 @@ name: Actions Workflow
 on:
   # schedule:
   #   - cron: "0/5 * * * *"
-  push:
-    branches:
-      - master
-      - 'feature/*' #this asterick matches any branch starting with feature/ like feature/a or feature/b but doesn't match feature/a/b or feat/c
-      - 'feature/**' # matches feature/a/b or feature/a patterns
+  # push:
+  #   branches:
+  #     - master
+  #     - 'feature/*' #this asterick matches any branch starting with feature/ like feature/a or feature/b but doesn't match feature/a/b or feat/c
+  #     - 'feature/**' # matches feature/a/b or feature/a patterns
     # branches-ignore: 
     # tags:
     #   - v1.*
