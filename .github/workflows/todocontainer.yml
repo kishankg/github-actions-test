@@ -3,7 +3,26 @@ name: Todo
 on: push
 
 jobs:
-  node-docker:
+  docker-steps:
+    runs-on: ubuntu-latest
+    container:
+      image: node:15.1.0-alpine3.10
+    steps:
+      - name: log node version
+        run: node -v
+      - name: Step with docker
+        uses: docker://node:14.15.0-alpine3.10
+        with:
+          entrypoint: '/bin/echo'
+          args: "Hello world!"
+
+      - name: Log node version
+        uses: docker://node:14.15.0-alpine3.10
+        with:
+          entrypoint: '/usr/local/bin/node'
+          args: "-v"
+
+  golang-docker:
     runs-on: ubuntu-latest
     services:
       react-app:
