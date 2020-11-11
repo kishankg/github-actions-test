@@ -27,4 +27,4 @@ jobs:
             - mongo-data:/data/db
     steps:
       - name: Get tasks
-        run: curl --location --request GET 'http://localhost:8080/api/task'
+        run: curl http://localhost:8080/api/task
