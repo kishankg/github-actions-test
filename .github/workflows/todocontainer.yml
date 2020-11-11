@@ -27,7 +27,7 @@ jobs:
       - name: Run a script
         uses: docker://node:14.15.0-alpine3.10
         with:
-          entrypoint: ./script.sh
+          entrypoint: ./scripts.sh
           args: "Some string"
 
   golang-docker:
