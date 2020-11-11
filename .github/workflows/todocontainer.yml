@@ -1,0 +1,30 @@
+name: Todo
+
+on: push
+
+jobs:
+  node-docker:
+    runs-on: ubuntu-latest
+    services:
+      react-app:
+        image: kishankg123/todoimage:reactimage
+        # stdin_open: true
+        ports: 
+            - "3000:3000"
+    
+      api-server:
+        image: kishankg123/todoimage:golang-image2
+        ports:
+            - "8080:8080"
+        # depends_on:
+            # - mongo
+
+      mongo:
+        image: mongo
+        ports: 
+            - "27017:27017"
+        volumes:
+            - mongo-data:/data/db
+    steps:
+      - name: Get tasks
+        run: curl --location --request GET 'http://localhost:8080/api/task'
