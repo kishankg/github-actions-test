@@ -4,7 +4,7 @@ on: push
 
 jobs:
   docker-steps:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     container:
       image: node:15.1.0-alpine3.10
     steps:
