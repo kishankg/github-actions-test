@@ -7,7 +7,7 @@ on:
 
 jobs: 
   run-shell-command:
-    runs-on: self-hosted
+    runs-on: azurerunner1
     timeout-minutes: 360
     steps:
       - name: echo a string
