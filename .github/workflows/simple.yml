@@ -2,13 +2,12 @@ name: Shell Commands
 
 on:
   push:
-  # pull_request:
     
 
 jobs: 
   run-shell-command:
-    runs-on: azurerunner1
-    timeout-minutes: 360
+    runs-on: ubuntu-latest
+    # timeout-minutes: 360
     steps:
       - name: echo a string
         run: echo "Hello World"
@@ -18,11 +17,11 @@ jobs:
           node -v
           npm -v
       
-      - name: Python Command
-        run: |
-          import platform
-          print(platform.processor())
-        shell: python 
+      # - name: tpcrunner1
+      #   run: |
+      #     import platform
+      #     print(platform.processor())
+      #   shell: python 
 
   run-windows-command:
     runs-on: windows-latest
